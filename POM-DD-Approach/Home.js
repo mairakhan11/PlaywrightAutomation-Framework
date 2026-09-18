@@ -2,7 +2,7 @@ class Home{
     constructor(page)
     {
         this.page=page;
-        this.homeHeading = page.getByText("Full-Fledged practice website for Automation Engineers", { exact: false });
+        this.homeHeading = page.getByText("Full-Fledged practice website for Automation Engineers", { exact: false }).first();
     }
 
     async navigateToHomePage()
