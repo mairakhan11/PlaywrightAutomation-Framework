@@ -36,8 +36,8 @@ class ProductPage{
 
             if (name === productName) 
         {
-            await selectedprod.locator(".add-to-cart").first().click();
-            await this.continueShopping.getByText("Continue Shopping").click();
+            await selectedprod.locator(".add-to-cart").first().click({ force: true });
+            await this.continueShopping.click();
             break;
         }
     }
