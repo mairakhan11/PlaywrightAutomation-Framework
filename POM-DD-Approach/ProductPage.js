@@ -7,9 +7,6 @@ class ProductPage{
         this.productLink = page.locator(".navbar-nav [href='/products']")
         this.prod_item = page.locator(".features_items .productinfo p")
         this.product = page.locator(".product-image-wrapper");
-        this.continueShopping = page.getByText("Continue Shopping")
-
-        
     }
 
     async navigateToProduct()
@@ -37,7 +34,10 @@ class ProductPage{
             if (name === productName) 
         {
             await selectedprod.locator(".add-to-cart").first().click({ force: true });
-            await this.continueShopping.click();
+            const continueShopping = this.page.locator("button.close-modal:visible");
+            if (await continueShopping.count()) {
+                await continueShopping.click();
+            }
             break;
         }
     }
