@@ -7,7 +7,4 @@ test('Assertion on HomePage', async ({page})=>{
     await homePage.navigateToHomePage();
     await homePage.validationOnHomePage();
     await expect(page.locator(".single-widget")).toBeVisible();
-    await page.pause();
-
-
 })

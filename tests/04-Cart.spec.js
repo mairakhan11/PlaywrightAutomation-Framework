@@ -11,8 +11,4 @@ test('Verify Cart Page ', async ({page})=>{
     await cartPage.checkout();
     await cartPage.OrderReview();
    
-    
-    
-    await page.pause();
-
 })
