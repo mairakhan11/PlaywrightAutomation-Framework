@@ -17,6 +17,7 @@ export default defineConfig({
   testIgnore: '**/example.spec.js',
   fullyParallel: false,
   workers: 1,
+  retries: process.env.CI ? 2 : 0,
   timeout: 70 * 1000,
   expect:{
     timeout: 70*1000

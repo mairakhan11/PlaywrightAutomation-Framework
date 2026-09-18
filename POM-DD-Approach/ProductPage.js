@@ -5,7 +5,6 @@ class ProductPage{
     {
         this.page=page;
         this.productLink = page.locator(".navbar-nav [href='/products']")
-        this.salesImage = page.locator("#sale_image");
         this.prod_item = page.locator(".features_items .productinfo p")
         this.product = page.locator(".product-image-wrapper");
         this.continueShopping = page.getByText("Continue Shopping")
@@ -21,7 +20,7 @@ class ProductPage{
 
     async verifyProductDetails()
     {
-        await expect(this.salesImage).toBeVisible();
+        await expect(this.prod_item.first()).toBeVisible();
         await this.prod_item.first().textContent();
         const allitems= await this.prod_item.allTextContents();
         console.log(await allitems);

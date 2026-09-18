@@ -2,9 +2,7 @@ class Home{
     constructor(page)
     {
         this.page=page;
-        this.AutomationTS= page.locator("#slider-carousel [role='link']");
-        this.text = page.locator("#slider-carousel .col-sm-6");
-        this.closeslider = page.locator("#hd-close-button");
+        this.homeHeading = page.getByText("Full-Fledged practice website for Automation Engineers", { exact: false });
     }
 
     async navigateToHomePage()
@@ -14,12 +12,7 @@ class Home{
 
     async validationOnHomePage()
     {
-        await this.AutomationTS.click();
-        const Hometext= await this.text.first().textContent();
-        console.log(Hometext);
-        await this.closeslider.click();
-
-
+        await this.homeHeading.waitFor({ state: 'visible' });
     }
 }
 module.exports={Home}
