@@ -16,12 +16,12 @@ class DataManager {
 
         const data = {};
 
-        worksheet.eachRow((row, rowNumber) => {
-
-            if (rowNumber === 1) return;
-
+        worksheet.eachRow((row) => {
             const key = row.getCell(1).value;
-            const value = row.getCell(2).value;
+            const cellValue = row.getCell(2).value;
+            const value = cellValue && typeof cellValue === 'object'
+                ? cellValue.text
+                : cellValue;
 
             data[key] = value;
         });

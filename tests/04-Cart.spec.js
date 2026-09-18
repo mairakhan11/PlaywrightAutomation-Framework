@@ -2,7 +2,7 @@ const { test, expect } = require('@playwright/test');
 test.use({ storageState: 'auth.json' });
 const {Cart} = require('../POM-DD-Approach/Cart')
 
-test.only('Verify Cart Page ', async ({page})=>{
+test('Verify Cart Page ', async ({page})=>{
 
     const productName = 'Fancy Green Top';
     const cartPage = new Cart(page);
