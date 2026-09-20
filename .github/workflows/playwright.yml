@@ -25,6 +25,7 @@ jobs:
       - name: Run Playwright tests
         env:
           CI: true
+          LOGIN_CREDENTIALS: ${{ secrets.LOGIN_CREDENTIALS }}
         run: npx playwright test
       - name: Upload Playwright report
         if: ${{ !cancelled() }}
