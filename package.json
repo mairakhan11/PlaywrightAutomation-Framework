@@ -3,14 +3,21 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "playwright test",
+    "test:chromium": "playwright test --project=chromium",
+    "test:webkit": "playwright test --project=webkit",
+    "report": "playwright show-report"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
     "@playwright/test": "^1.63.0",
-    "@types/node": "^22.20.3"
+    "@types/node": "^22.20.3",
+    "typescript": "^5.9.2"
   },
   "dependencies": {
     "exceljs": "^4.4.0"
