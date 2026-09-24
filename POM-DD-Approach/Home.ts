@@ -23,8 +23,8 @@ export class Home {
   }
 
   async category(): Promise<void> {
-    await this.categoryAccordion.getByRole('link', { name: ' Women' }).click();
-    await this.categoryAccordion.getByRole('link', { name: ' Men ' }).click();
-    await this.categoryAccordion.getByRole('link', { name: ' Kids ' }).click();
+    await this.categoryAccordion.locator('a[href="#Women"]').click();
+    await this.categoryAccordion.locator('a[href="#Men"]').click();
+    await this.categoryAccordion.locator('a[href="#Kids"]').click();
   }
 }
