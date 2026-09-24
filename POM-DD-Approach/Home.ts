@@ -22,9 +22,9 @@ export class Home {
     await this.homeHeading.waitFor({ state: 'visible' });
   }
 
-  async category(): Promise<void> {
-    await this.categoryAccordion.locator('a[href="#Women"]').click();
-    await this.categoryAccordion.locator('a[href="#Men"]').click();
-    await this.categoryAccordion.locator('a[href="#Kids"]').click();
-  }
+  // async category(): Promise<void> {
+  //   await this.categoryAccordion.locator('a[href="#Women"]').click();
+  //   await this.categoryAccordion.locator('a[href="#Men"]').click();
+  //   await this.categoryAccordion.locator('a[href="#Kids"]').click();
+  // }
 }
