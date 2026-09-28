@@ -39,5 +39,11 @@ export class ProductPage {
         return;
       }
     }
+
+    throw new Error(`Product "${productName}" was not found on the products page`);
+  }
+
+  async addTocart(productName: string): Promise<void> {
+    await this.addToCart(productName);
   }
 }
