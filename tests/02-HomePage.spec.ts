@@ -3,7 +3,7 @@ import { Home } from '../POM-DD-Approach/Home';
 
 test.use({ storageState: 'auth.json' });
 
-test.only('Assertion on HomePage', async ({ page }) => {
+test('Assertion on HomePage', async ({ page }) => {
   const homePage = new Home(page);
   await homePage.navigateToHomePage();
   //await page.pause()
